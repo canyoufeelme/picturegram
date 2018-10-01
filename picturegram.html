@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picturegram</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+
+        h1{
+            text-align: center;
+            font-family: Lobster;
+            font-size: 50px;
+            margin: 0;
+        }
+
+
+    	 img{
+    	 	border: 2px solid lime;
+    
+    	 }
+         #mainpic {
+              width: calc(100% - 10px);
+              height: auto;
+              margin: 5px;
+         }
+
+
+         .smallpic{
+            width: calc(33.3333333% - 13px);
+            height: auto;
+            margin: 5px;
+         }
+
+          img:hover {
+              border: 2px solid magenta;
+              cursor: pointer;
+          }
+    </style>
+
+
+</head>
+<body>
+    <h1>Picturegram</h1>
+
+    <img src="IMG_4821.jpg" id="mainpic">
+    <img src="IMG_5239.jpg" class="smallpic"> 
+    <img src="IMG_5238.jpg" class="smallpic">
+    <img src="IMG_5225.jpg" class="smallpic">
+    <img src="IMG_4948.jpg" class="smallpic">
+    <img src="IMG_4786.jpg" class="smallpic">
+    <img src="IMG_5255.jpg" class="smallpic">
+    <img src="IMG_4376.jpg" class="smallpic">
+    <img src="IMG_4166.jpg" class="smallpic">
+    <img src="IMG_4137.jpg" class="smallpic">
+    <img src="IMG_4090.jpg" class="smallpic">
+  </div>
+
+  <script type="text/javascript">
+        const bigImage = document.querySelector("#mainpic");
+        const images = document.querySelectorAll(".smallpic");
+
+        images.forEach(image => image.addEventListener("click", 
+            function(e) {
+                let clickedImage = e.target.src;
+                let swapImage = bigImage.src;
+                bigImage.src = clickedImage;
+                e.target.src = swapImage;
+            }
+            ));
+    </script>
